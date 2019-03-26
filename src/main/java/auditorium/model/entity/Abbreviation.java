@@ -23,11 +23,11 @@ public class Abbreviation {
 	@OneToOne(mappedBy = "universityAbbreviation")
 	private University university;
 	
-//	@OneToOne(mappedBy = "abbreviation")
-//	private Corp corp;
-//	
-//	@OneToOne(mappedBy = "abbreviation")
-//	private College college;
+	@OneToOne(mappedBy = "corpAbbreviation")
+	private Corp corp;
+	
+	@OneToOne(mappedBy = "collegeAbbreviation")
+	private College college;
 	
 	public Abbreviation() {
 		super();
@@ -63,8 +63,25 @@ public class Abbreviation {
 		this.university = university;
 	}
 
+	public Corp getCorp() {
+		return corp;
+	}
+
+	public void setCorp(Corp corp) {
+		this.corp = corp;
+	}
+
+	public College getCollege() {
+		return college;
+	}
+
+	public void setCollege(College college) {
+		this.college = college;
+	}
+
 	@Override
 	public String toString() {
-		return "Abbreviation [id=" + id + ", abbreviation=" + abbreviation + ", university=" + university + "]";
+		return "Abbreviation [id=" + id + ", abbreviation=" + abbreviation + ", university=" + university + ", corp="
+				+ corp + ", college=" + college + "]";
 	}
 }
