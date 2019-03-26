@@ -9,6 +9,12 @@ public class MainApplicationController {
 	@GetMapping("/")
 	public String startApp() {
 		System.out.println("Am intrat aici!");
-		return "ceva";
+		return "index";
+	}
+	
+	@GetMapping("/index")
+	public String startAppByIndex() {
+		System.out.println("Am intrat aici prin index!");
+		return "index";
 	}
 }
