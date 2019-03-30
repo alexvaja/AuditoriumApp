@@ -8,18 +8,30 @@
 	href="../../static/css/MainAplicationFontsCSS.css" />
 <link rel="stylesheet" th:href="@{/css/LoginRegisterCSS.css}"
 	href="../../static/css/LoginRegisterCSS.css" />
-	
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+<link
+	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
 	rel="stylesheet" />
 <title>Login</title>
 </head>
 
 <body>
 	<div class="wrapper">
-		<th:block th:include = "layouts/HeaderTemplate.html"></th:block>
+		<div id="header-wrapper">
+			<th:block th:include="layouts/HeaderTemplate.html"></th:block>
+		</div>
+
+		<div id="page" class="container">
+			<th:block th:include="actions/LoginActions.html"></th:block>
+		</div>
+
+		<div id="portfolio-wrapper"></div>
+	</div>
+	<div id="footer">
+	
 	</div>
 </body>
 </html>
