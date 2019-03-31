@@ -6,4 +6,5 @@ bin/
 *log*
 *.pdf
 
-!src/
+!src/main/resources
+!src/main/java
