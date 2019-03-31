@@ -11,7 +11,7 @@
                 format: 'DD/MM/YYYY'
             },
         });
-    
+        var var = null;
         var myCalendar = $('.js-datepicker');
         var isClick = 0;
     
