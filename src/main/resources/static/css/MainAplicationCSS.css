@@ -12,6 +12,10 @@ body {
 	color: rgba(0,0,0,.8);
 }
 
+.right{
+	position: absolute;
+	right: 0px;
+}
 h1, h2, h3 {
 	margin: 0;
 	padding: 0;
@@ -543,8 +547,8 @@ ul.style3 .first {
 	{
 		display: inline-block;
 		margin-top: 2em;
-		padding: 0em 1em;
-		background: #970A42;
+		padding: 0 1px;
+		background: #9e0370;
 		border-radius: 8px;
 		letter-spacing: 0.10em;
 		line-height: 3em;
@@ -553,6 +557,9 @@ ul.style3 .first {
 		font-weight: 400;
 		font-size: 1em;
 		color: #FFF;
+	}
+	.btn{
+		padding: 0 1px;
 	}
 	
 /*********************************************************************************/
