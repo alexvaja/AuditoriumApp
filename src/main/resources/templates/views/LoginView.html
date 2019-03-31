@@ -1,3 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" th:href="@{/css/MainAplicationCSS.css}"
+	href="../../static/css/MainAplicationCSS.css" />
+<link rel="stylesheet" th:href="@{/css/MainAplicationFontsCSS.css}"
+	href="../../static/css/MainAplicationFontsCSS.css" />
+<link rel="stylesheet" th:href="@{/css/LoginRegisterCSS.css}"
+	href="../../static/css/LoginRegisterCSS.css" />
 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link
+	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+	rel="stylesheet" />
+<title>Home</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="header-wrapper">
+			<th:block th:include="layouts/HeaderTemplate.html"></th:block>
+		</div>
+
+		<div id="page" class="container">
+			<th:block th:include="actions/LoginActions.html"></th:block>
+		</div>
+
+		<div id="portfolio-wrapper"></div>
+	</div>
+	<div id="footer">
+	
+	</div>
+</body>
 </html>
