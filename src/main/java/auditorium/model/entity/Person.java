@@ -18,7 +18,7 @@ import javax.persistence.Table;
 public class Person {
 	
 	@Id
-	@Column(name = "person_id", length = 25, nullable = false, unique = true)
+	@Column(name = "person_id", length = 11, nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
@@ -40,10 +40,10 @@ public class Person {
 	
 	@ManyToOne
 	@JoinColumn(name = "gender_id", nullable = false)
-	private Gender personGender;
+	private Gender gender;
 	//
 	@OneToOne(mappedBy = "person")
-	private User user;
+	private AppUser appUser;
 	
 	//class with all attributes and relations between entity.
 }

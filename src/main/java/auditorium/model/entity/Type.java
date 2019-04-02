@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Type {
 
 	@Id
-	@Column(name = "type_id", length = 5, nullable = false, unique = true)
+	@Column(name = "id_type", length = 11, nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
@@ -26,6 +26,6 @@ public class Type {
 	@Column(name = "description", length = 120)
 	private String description;
 	//
-	@ManyToMany(mappedBy = "type", fetch = FetchType.EAGER)
-	private List<Class> classes;
+	@ManyToMany(mappedBy = "types", fetch = FetchType.EAGER)
+	private List<Classroom> classrooms;
 }

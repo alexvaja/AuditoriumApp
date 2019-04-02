@@ -1,6 +1,5 @@
 package auditorium.model.entity;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -10,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,41 +17,29 @@ import javax.persistence.Table;
 public class Register {
 
 	@Id
-	@Column(name = "register_id", length = 25, nullable = false,  unique = true)
+	@Column(name = "id_register", length = 11, nullable = false,  unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	@Column(name = "first_name", length = 60, nullable = false)
-	private String firstName;
-	
-	@Column(name = "last_name", length = 60, nullable = false)
-	private String lastName;
-	
-	@Column(name = "birth_date", length = 60, nullable = false)
-	private Date birthDate;
-	
-	@ManyToOne
-	@JoinColumn(name = "gender_id", nullable = false)
-	private Gender registerGender;
-	
-	@Column(name = "password", length = 120, nullable = false)
-	private String password;
 	
 	@Column(name = "email", length = 60, nullable = false, unique = true)
 	private String email;
 	
-	@Column(name = "phone_number", length = 60, nullable = false, unique = true)
-	private String phoneNumber;
+	@Column(name = "password", length = 120, nullable = false)
+	private String password;
+	
+	@OneToOne
+	@JoinColumn(name = "college_id", nullable = false)
+	private College registerCollege;
 	
 	@Column(name = "checked", nullable = false)
 	private Boolean checked;
 	//
-	@ManyToMany(/*fetch = FetchType.EAGER*/)
+	@OneToOne
 	@JoinTable(
 			name = "register_role",
 			joinColumns = {@JoinColumn(name = "register_id")},
 			inverseJoinColumns = {@JoinColumn(name = "role_id")})
-	private List<Role> registerRoles;
+	private List<Role> registerRole;
 	
 	
 }

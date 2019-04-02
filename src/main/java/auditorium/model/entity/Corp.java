@@ -1,4 +1,4 @@
-package auditorium.model.entity;
+ package auditorium.model.entity;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,7 +19,7 @@ import javax.persistence.Table;
 public class Corp {
 
 	@Id
-	@Column(name = "corp_id", length = 11, nullable = false, unique = true)
+	@Column(name = "id_corp", length = 11, nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
@@ -27,26 +28,24 @@ public class Corp {
 	
 	@OneToOne
 	@JoinColumn(name = "address_id", nullable = false)
-	private Address address;
+	private Address corpAddress;
 	
-	@Column(name = "schedule", length = 240, nullable = false)
-	private String schedule;
+	@OneToOne
+	@JoinColumn(name = "schedule_id", nullable = false)
+	private Schedule schedule;
 	
 	@OneToOne
 	@JoinColumn(name = "abbreviation_id", nullable = false)
 	private Abbreviation corpAbbreviation;
-	
-	@Column(name = "security_number", length = 25, nullable = false, unique = true)
-	private Integer securityNumber;
 	//
 	@ManyToMany
 	@JoinTable(
 			name = "college_corp",
-			joinColumns = { @JoinColumn(name = "college_id") },
-			inverseJoinColumns = {  @JoinColumn(name = "corp_id") }
+			joinColumns = { @JoinColumn(name = "id_college") },
+			inverseJoinColumns = {  @JoinColumn(name = "id_corp") }
 			)
 	private List<College> colleagues; 
 	
-	
-	private List<Class> classes;
+	@OneToMany(mappedBy = "corp")
+	private List<Classroom> classrooms;
 }

@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class AppUser {
 
 	@Id
 	@Column(name = "user_id", length = 25, nullable = false, unique = true)

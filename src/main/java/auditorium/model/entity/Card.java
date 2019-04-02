@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,54 +15,14 @@ import javax.persistence.Table;
 public class Card {
 
 	@Id
-	@Column(name = "card_id", length = 25, nullable = false, unique = true)
+	@Column(name = "id_card", length = 11, nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column(name = "card_number", length = 25, nullable = false, unique = true)
 	private String cardNumber; 
 	//
-	@ManyToMany(mappedBy = "cards")
-	private List<User> users;
-	
-	public Card() {
-		super();
-	}
+	@OneToOne(mappedBy = "card")
+	private List<AppUser> appUser;
 
-	public Card(Integer id, String cardNumber) {
-		super();
-		this.id = id;
-		this.cardNumber = cardNumber;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getCardNumber() {
-		return cardNumber;
-	}
-
-	public void setCardNumber(String cardNumber) {
-		this.cardNumber = cardNumber;
-	}
-
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-
-	//medota speciala de generat numar random pt card
-
-	@Override
-	public String toString() {
-		return "Card [id=" + id + ", cardNumber=" + cardNumber + ", users=" + users + "]";
-	}	
 }
