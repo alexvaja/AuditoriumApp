@@ -640,3 +640,7 @@ input {
     padding: 50px 40px;
   }
 }
+
+#alegere{
+	max-width: 16.25rem !important;
+}

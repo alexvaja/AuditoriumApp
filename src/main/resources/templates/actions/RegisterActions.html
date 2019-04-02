@@ -1,74 +1,88 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
-    <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Main CSS-->
-	<link rel="stylesheet" th:href="@{/css/LoginRegisterCSS.css}"
-		href="../../static/css//LoginRegisterCSS.css" />
+<!-- Required meta tags-->
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Colorlib Templates">
+<meta name="author" content="Colorlib">
+<meta name="keywords" content="Colorlib Templates">
+<!-- Title Page-->
+<title>Inregistrare</title>
+<!-- Font special for pages-->
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<!-- Main CSS-->
+<link rel="stylesheet" th:href="@{/css/LoginRegisterCSS.css}"
+	href="../../static/css//LoginRegisterCSS.css" />
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
-                    <h2 class="title">Formular inregistrare</h2>
-                    <form method="POST">
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Nume:</label>
-                                    <input class="input--style-4" type="text" name="first_name">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Prenume:</label>
-                                    <input class="input--style-4" type="text" name="last_name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div>
-                                <div class="input-group">
-                                    <label class="label">Email Institutional:</label>
-                                    <input class="input--style-4" type="email" name="email" style="padding: 2px 276px;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Parola:</label>
-                                    <input class="input--style-4" type="text" name="password">
-                                </div>
-                            </div>
-                             <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Repeta Parola:</label>
-                                    <input class="input--style-4" type="text" name="repeatPassword">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Main JS-->
-    <script src="scripts/LoginRegisterScript.js"></script>
+	<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+		<div class="wrapper wrapper--w680">
+			<div class="card card-4">
+				<div class="card-body">
+					<h2 class="title">Formular inregistrare</h2>
+					<form method="POST">					
+						
+						<div class="row row-space">
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Email Institutional:</label> 
+									<input class="input--style-4" type="text" name="email">
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Facultatea de:</label> 
+									<select name="Facultate" id="alegere" class="input--style-4" 
+										style="max-width: 16.25rem; height:48px">
+                    					<option value="DPM" style="width:30px">Design de produs și mediu</option>
+					                    <option value="Mecanica">Inginerie mecanică</option>
+					                    <option value="SIM">Știința și ingineria materialelor</option>
+					                    <option value="Litere">Litere</option>
+					                    <option value="Muzica">Muzică</option>			                    
+					                    <option value="Drept">Drept</option>
+					                    <option value="MateInfo">Matematică și Informatică</option>
+					                    <option value="Psiho">Psihologie și științele educației</option>
+					                    <option value="AT">Alimentație și turism</option>
+					                    <option value="Silvic">Silvicultură și exploatări forestiere</option>
+					                    <option value="Sport">Educație fizică și sporturi montane</option>
+					                    <option value="Medicina">Medicină</option>
+					                    <option value="Socio">Sociologie și comunicare</option>
+					                    <option value="Constructii">Construcții</option>
+                					</select>
+								</div>
+							</div>
+						</div>		
+									
+						<div class="row row-space">
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Parola:</label> 
+									<input class="input--style-4" type="text" name="password">
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Repeta Parola:</label> 
+									<input class="input--style-4" type="text" name="repeatPassword">
+								</div>
+							</div>
+						</div>
+						<div class="p-t-15">
+							<button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Main JS-->
+	<script src="scripts/LoginRegisterScript.js"></script>
 
 </body>
 

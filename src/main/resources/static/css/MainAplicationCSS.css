@@ -602,4 +602,8 @@ ul.style3 .first {
 		color: rgba(255,255,255,1);
 	}
 	
+	#alegere{
+	max-width: 16.25rem !important;
+}
+	
 
