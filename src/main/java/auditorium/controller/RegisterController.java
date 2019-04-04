@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RegisterController 
 {
-	@GetMapping("/inregistrare")
+	@GetMapping("/RegisterView")
 	public String getMapping(Model model)
 	{
 		return "views/RegisterView";
