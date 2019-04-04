@@ -8,29 +8,29 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "seat")
-public class Seat {
+@Table(name = "genre")
+public class Genre {
 
 	@Id
-	@Column(name = "id_seat", length = 25, nullable = false, unique = true)
+	@Column(name = "id_genre", length = 11, nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "seat", length = 240, nullable = false)
-	private String seatList;
+	@Column(name = "genre", length = 60, nullable = false)
+	private String Genre;
 	//
-	@ManyToMany(mappedBy = "seats", fetch = FetchType.EAGER)
-	private List<Classroom> classrooms;
+	@OneToMany(mappedBy = "genre", fetch = FetchType.EAGER)
+	private List<Book> books;
 	
-	public Seat(Integer id, String seatList, List<Classroom> classrooms) {
+	public Genre(Integer id, String genre, List<Book> books) {
 		super();
 		this.id = id;
-		this.seatList = seatList;
-		this.classrooms = classrooms;
+		Genre = genre;
+		this.books = books;
 	}
 
 	public Integer getId() {
@@ -41,25 +41,25 @@ public class Seat {
 		this.id = id;
 	}
 
-	public String getSeatList() {
-		return seatList;
+	public String getGenre() {
+		return Genre;
 	}
 
-	public void setSeatList(String seatList) {
-		this.seatList = seatList;
+	public void setGenre(String genre) {
+		Genre = genre;
 	}
 
-	public List<Classroom> getClassrooms() {
-		return classrooms;
+	public List<Book> getBooks() {
+		return books;
 	}
 
-	public void setClassrooms(List<Classroom> classrooms) {
-		this.classrooms = classrooms;
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
 	@Override
 	public String toString() {
-		return "Seat [id=" + id + ", seatList=" + seatList + ", classrooms=" + classrooms + "]";
+		return "Genre [id=" + id + ", Genre=" + Genre + ", books=" + books + "]";
 	}
 
 	@Override
@@ -78,7 +78,7 @@ public class Seat {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Seat other = (Seat) obj;
+		Genre other = (Genre) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -86,6 +86,8 @@ public class Seat {
 			return false;
 		return true;
 	}
+	
+	
 	
 	
 }
