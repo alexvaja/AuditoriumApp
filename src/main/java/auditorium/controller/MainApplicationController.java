@@ -1,16 +1,22 @@
 package auditorium.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import auditorium.Application;
+
 @Controller
 public class MainApplicationController {
 
+	private final static Logger LOGGER = LoggerFactory.getLogger(MainApplicationController.class.getClass());
+
 	@GetMapping("/")
 	public String startApp() {
-		System.out.println("Am intrat aici!");
+		LOGGER.info("Am intrat aici");
 		return "index";
 	}
 
@@ -27,7 +33,7 @@ public class MainApplicationController {
 				return "redirect:RegisterView";
 			}
 		}
-		System.out.println("Am intrat aici prin index!");
+		LOGGER.info("Am intrat aici prin index!");
 		return "index";
 	}
 }
