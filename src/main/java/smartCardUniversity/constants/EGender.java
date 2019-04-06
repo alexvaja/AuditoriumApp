@@ -1,7 +1,7 @@
 package smartCardUniversity.constants;
 
-public enum EGender {
-
+public enum EGender 
+{
 	M,
 	F,
 	O
