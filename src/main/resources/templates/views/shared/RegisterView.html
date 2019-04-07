@@ -20,15 +20,16 @@
 <body>
 	<div class="wrapper">
 		<div id="header-wrapper">
-			<th:block th:include="layouts/HeaderTemplate.html"></th:block>
+			<th:block th:include="layouts/shared/HeaderTemplate.html"></th:block>
 		</div>
 
 		<div id="page" class="container">
-			<th:block th:include="actions/RegisterActions.html"></th:block>
+			<th:block th:include="actions/shared/RegisterActions.html"></th:block>
 		</div>
 
 		<div id="portfolio-wrapper"></div>
 	</div>
+	
 	<div id="footer">
 	
 	</div>
