@@ -10,7 +10,7 @@ public class LoginController
 	public String startApp() 
 	{
 		System.out.println("Am intrat in login!");
-		return "views/LoginView";
+		return "views/shared/LoginView";
 	}
 
 }

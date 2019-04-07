@@ -10,6 +10,6 @@ public class RegisterController
 	@GetMapping("/RegisterView")
 	public String getMapping(Model model)
 	{
-		return "views/RegisterView";
+		return "views/shared/RegisterView";
 	}
 }
