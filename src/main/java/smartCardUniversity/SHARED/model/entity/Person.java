@@ -114,8 +114,7 @@ public class Person {
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate
-				+ ", personAddress=" + personAddress + ", phoneNumber=" + phoneNumber + ", personGender=" + personGender
-				+ ", appUser=" + appUser + "]";
+				+ ", personAddress=" + personAddress + ", phoneNumber=" + phoneNumber + ", personGender=" + personGender;
 	}
 	@Override
 	public int hashCode() {

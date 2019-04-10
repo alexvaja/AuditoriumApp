@@ -70,6 +70,12 @@ public class AppUser {
 	{
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "AppUser [id=" + id + ", email=" + email + ", password=" + password;
+	}
+	
 	public AppUser(Integer id, String email, String password, Person person, College userCollege, Role userRole,
 			Card card, List<BookBooking> bookBookings, List<SeatBooking> seatBookings, List<RoomBooking> roomBookings,
 			List<Order> orders) {
@@ -152,15 +158,6 @@ public class AppUser {
 	}
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
-	}
-
-	
-	@Override
-	public String toString() {
-		return "AppUser [id=" + id + ", email=" + email + ", password=" + password + ", person=" + person
-				+ ", userCollege=" + userCollege + ", userRole=" + userRole + ", card=" + card + ", bookBookings="
-				+ bookBookings + ", seatBookings=" + seatBookings + ", roomBookings=" + roomBookings + ", orders="
-				+ orders + "]";
 	}
 
 	@Override

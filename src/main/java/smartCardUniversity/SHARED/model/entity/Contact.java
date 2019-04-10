@@ -31,7 +31,7 @@ public class Contact {
 	
 	public Contact()
 	{
-		
+		super();
 	}
 	
 	public Contact(Integer id, String email, String phoneNumber, String faxNumber, College college) {

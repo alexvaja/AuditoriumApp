@@ -46,12 +46,13 @@ public class UserDetailsServiceImplement implements UserDetailsService
 		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
 		//List<Role> roles = new ArrayList<>();
 		
-		GrantedAuthority authority = new SimpleGrantedAuthority(role.getRole().toString());
+		GrantedAuthority authority = new SimpleGrantedAuthority(role.getRole());
 		grantList.add(authority);
 		
 		UserDetails userDetails = (UserDetails) new User(appUser.getEmail(), EncryptedPasswordUtils.encrytePassword(appUser.getPassword()),grantList);
 			
 		return userDetails;
+		//return null;
 	}
 
 	private AppUser getUserByEmail(String email) 
