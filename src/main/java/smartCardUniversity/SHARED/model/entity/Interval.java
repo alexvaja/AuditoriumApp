@@ -31,6 +31,10 @@ public class Interval {
 	@JoinColumn(name = "schedule_id", nullable = false)
 	private Schedule schedule;
 
+	public Interval()
+	{
+		super();
+	}
 	public Interval(Integer id, String weekDay, String startHour, String finisHour, Schedule schedule) {
 		super();
 		this.id = id;

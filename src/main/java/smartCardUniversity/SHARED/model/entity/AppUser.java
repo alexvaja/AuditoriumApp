@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class AppUser {
 
 	@Id
@@ -66,6 +66,10 @@ public class AppUser {
 	@OneToMany(mappedBy = "userOrder")
 	private List<Order> orders;
 
+	public AppUser()
+	{
+		
+	}
 	public AppUser(Integer id, String email, String password, Person person, College userCollege, Role userRole,
 			Card card, List<BookBooking> bookBookings, List<SeatBooking> seatBookings, List<RoomBooking> roomBookings,
 			List<Order> orders) {

@@ -28,9 +28,12 @@ public class Abbreviation {
 	
 	@OneToOne(mappedBy = "collegeAbbreviation")
 	private College college;
+	
+	public Abbreviation() 
+	{
+		super();
+	}
 
-	
-	
 	public Abbreviation(Integer id, String abbreviation, University university, Corp corp, College college) {
 		super();
 		this.id = id;

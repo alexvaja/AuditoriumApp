@@ -23,6 +23,10 @@ public class Card {
 	@OneToOne(mappedBy = "card")
 	private AppUser appUser;
 	
+	public Card()
+	{
+		super();
+	}
 	
 	public Card(Integer id, String cardNumber, AppUser appUser) {
 		super();

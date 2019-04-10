@@ -37,6 +37,10 @@ public class SeatBooking {
 		this.seatNumber = seatNumber;
 	}
 
+	public SeatBooking()
+	{
+		super();
+	}
 	public Integer getId() {
 		return id;
 	}

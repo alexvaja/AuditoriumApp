@@ -31,7 +31,11 @@ public class Address {
 	
 	@OneToOne(mappedBy = "corpAddress")
  	private Corp corp;
-
+	
+	public Address()
+	{
+		super();
+	}
 	public Address(Integer id, String street, String city, Person person, University university, Corp corp) {
 		super();
 		this.id = id;

@@ -49,6 +49,10 @@ public class Corp {
 	@OneToMany(mappedBy = "corp")
 	private List<Classroom> classrooms;
 
+	public Corp()
+	{
+		super();
+	}
 	public Corp(Integer id, String name, Address corpAddress, Schedule schedule, Abbreviation corpAbbreviation,
 			List<College> colleagues, List<Classroom> classrooms) {
 		super();

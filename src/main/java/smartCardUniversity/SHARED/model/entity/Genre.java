@@ -26,6 +26,11 @@ public class Genre {
 	@OneToMany(mappedBy = "genre", fetch = FetchType.EAGER)
 	private List<Book> books;
 	
+	public Genre()
+	{
+		super();
+	}
+	
 	public Genre(Integer id, String genre, List<Book> books) {
 		super();
 		this.id = id;

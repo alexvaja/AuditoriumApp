@@ -57,6 +57,10 @@ public class Book {
 			)
 	private List<Author> authors;
 
+	public Book() 
+	{
+		super();
+	}
 	public Book(Integer id, String title, String iSBN, Access access, Publisher publisher, Genre genre, String year,
 			List<BookBooking> bookBookings, List<Author> authors) {
 		super();

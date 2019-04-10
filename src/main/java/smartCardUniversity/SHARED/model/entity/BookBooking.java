@@ -37,7 +37,10 @@ public class BookBooking {
 	@Column(name = "is_refund", nullable = false)
 	private Boolean isRefund;
 
-	
+	public BookBooking()
+	{
+		super();
+	}
 	
 	public BookBooking(Integer id, Book book, AppUser userBook, Date bookingDay, Date refundDay, Boolean isRefund) {
 		super();

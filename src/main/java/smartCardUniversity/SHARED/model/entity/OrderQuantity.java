@@ -37,6 +37,10 @@ public class OrderQuantity {
 		this.quantity = quantity;
 	}
 
+	public OrderQuantity()
+	{
+		super();
+	}
 	public Integer getId() {
 		return id;
 	}

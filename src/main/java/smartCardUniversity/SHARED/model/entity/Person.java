@@ -45,6 +45,12 @@ public class Person {
 	//
 	@OneToOne(mappedBy = "person")
 	private AppUser appUser;
+	
+	public Person() 
+	{
+		
+	}
+	
 	public Person(Integer id, String firstName, String lastName, Date birthDate, Address personAddress,
 			String phoneNumber, Gender personGender, AppUser appUser) {
 		super();

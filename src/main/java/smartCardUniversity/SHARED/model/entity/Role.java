@@ -33,7 +33,10 @@ public class Role {
 		this.register = register;
 		this.appUser = appUser;
 	}
-
+	public Role()
+	{
+		super();
+	}
 	public Integer getId() {
 		return id;
 	}
