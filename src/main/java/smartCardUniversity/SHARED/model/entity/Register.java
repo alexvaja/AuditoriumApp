@@ -42,6 +42,10 @@ public class Register {
 			)
 	private Role registerRole;
 	
+	public Register()
+	{
+		super();
+	}
 	public Register(Integer id, String email, String password, College registerCollege, Boolean checked,
 			Role registerRole) {
 		super();

@@ -58,7 +58,10 @@ public class Classroom {
 	@OneToMany(mappedBy = "classroom")
 	private List<RoomBooking> roomBookings;
 
-	
+	public Classroom()
+	{
+		super();
+	}
 	public Classroom(Integer id, Corp corp, String floor, int number, int capacity, String description,
 			List<Seat> seats, List<Type> types, List<RoomBooking> roomBookings) {
 		super();

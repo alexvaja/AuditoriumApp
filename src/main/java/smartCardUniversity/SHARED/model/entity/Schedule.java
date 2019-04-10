@@ -33,6 +33,10 @@ public class Schedule {
 		this.intervals = intervals;
 	}
 
+	public Schedule()
+	{
+		super();
+	}
 	public Integer getId() {
 		return id;
 	}

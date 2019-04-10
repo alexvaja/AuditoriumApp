@@ -28,6 +28,12 @@ public class Contact {
 	//
 	@OneToOne(mappedBy = "contact")
 	private College college;
+	
+	public Contact()
+	{
+		super();
+	}
+	
 	public Contact(Integer id, String email, String phoneNumber, String faxNumber, College college) {
 		super();
 		this.id = id;

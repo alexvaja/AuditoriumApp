@@ -46,6 +46,10 @@ public class RoomBooking {
 	@OneToMany(mappedBy = "roomBooking", fetch = FetchType.EAGER)
 	private List<SeatBooking> seatBookings;
 	
+	public RoomBooking()
+	{
+		super();
+	}
 	public RoomBooking(Integer id, AppUser userRoom, Classroom classroom, Date date, String startHour,
 			String finishHour, Boolean isOpen, List<SeatBooking> seatBookings) {
 		super();

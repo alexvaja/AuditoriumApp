@@ -45,6 +45,12 @@ public class Person {
 	//
 	@OneToOne(mappedBy = "person")
 	private AppUser appUser;
+	
+	public Person() 
+	{
+		
+	}
+	
 	public Person(Integer id, String firstName, String lastName, Date birthDate, Address personAddress,
 			String phoneNumber, Gender personGender, AppUser appUser) {
 		super();
@@ -108,8 +114,7 @@ public class Person {
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate
-				+ ", personAddress=" + personAddress + ", phoneNumber=" + phoneNumber + ", personGender=" + personGender
-				+ ", appUser=" + appUser + "]";
+				+ ", personAddress=" + personAddress + ", phoneNumber=" + phoneNumber + ", personGender=" + personGender;
 	}
 	@Override
 	public int hashCode() {

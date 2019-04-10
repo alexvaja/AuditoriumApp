@@ -32,6 +32,11 @@ public class Seat {
 		this.seatList = seatList;
 		this.classrooms = classrooms;
 	}
+	
+	public Seat()
+	{
+		super();
+	}
 
 	public Integer getId() {
 		return id;

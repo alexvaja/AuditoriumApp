@@ -27,7 +27,10 @@ public class Author {
 	//
 	@ManyToMany(mappedBy = "authors")
 	private List<Book> books;
-	
+	public Author()
+	{
+		super();
+	}
 	public Author(Integer id, String firstName, String lastName, List<Book> books) {
 		super();
 		this.id = id;

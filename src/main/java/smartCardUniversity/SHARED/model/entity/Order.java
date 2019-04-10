@@ -35,6 +35,11 @@ public class Order {
 	@Column(name = "date", length = 60, nullable = false)
 	private String date;
 
+	public Order()
+	{
+		super();
+	}
+	
 	public Order(Integer id, AppUser userOrder, List<OrderQuantity> orderQuantities, Boolean taken, String date) {
 		super();
 		this.id = id;

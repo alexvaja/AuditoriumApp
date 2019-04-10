@@ -26,7 +26,10 @@ public class Access {
 	@OneToMany(mappedBy = "access", fetch = FetchType.EAGER)
 	private List<Book> books;
 	
-		
+	public Access()
+	{
+		super();
+	}
 	public Access(Integer id, String level, List<Book> books) {
 		super();
 		this.id = id;

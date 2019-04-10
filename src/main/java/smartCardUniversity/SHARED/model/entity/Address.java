@@ -31,7 +31,17 @@ public class Address {
 	
 	@OneToOne(mappedBy = "corpAddress")
  	private Corp corp;
-
+	
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", street=" + street + ", city=" + city;
+	}
+	
+	
+	public Address()
+	{
+		super();
+	}
 	public Address(Integer id, String street, String city, Person person, University university, Corp corp) {
 		super();
 		this.id = id;
@@ -80,11 +90,6 @@ public class Address {
 	}
 
 	
-	@Override
-	public String toString() {
-		return "Address [id=" + id + ", street=" + street + ", city=" + city + ", person=" + person + ", university="
-				+ university + ", corp=" + corp + "]";
-	}
 
 	@Override
 	public int hashCode() {

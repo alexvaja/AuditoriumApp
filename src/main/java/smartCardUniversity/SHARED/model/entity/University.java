@@ -41,6 +41,11 @@ public class University {
 		this.universityAbbreviation = universityAbbreviation;
 		this.college = college;
 	}
+	
+	public University()
+	{
+		
+	}
 	public Integer getId() {
 		return id;
 	}

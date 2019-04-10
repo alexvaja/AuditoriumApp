@@ -38,6 +38,11 @@ public class Dish
 			inverseJoinColumns = { @JoinColumn(name = "id_food") }
 			)
 	private List<Food> foods;
+	
+	public Dish()
+	{
+		super();
+	}
 	public Dish(Integer id, Category category, Menu menu, List<Food> foods) {
 		super();
 		this.id = id;

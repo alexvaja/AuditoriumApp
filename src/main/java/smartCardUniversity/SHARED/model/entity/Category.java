@@ -28,6 +28,10 @@ public class Category
 	@OneToMany(mappedBy = "category")
 	private List<Dish> dishes;
 	
+	public Category()
+	{
+		super();
+	}
 	public Category(Integer id, String name, Double price, List<Dish> dishes) {
 		super();
 		this.id = id;

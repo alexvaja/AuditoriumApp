@@ -25,6 +25,12 @@ public class Gender {
 	//
 	@OneToMany(mappedBy = "personGender", fetch = FetchType.EAGER)
 	private List<Person> persons;
+	
+	public Gender()
+	{
+		super();
+	}
+	
 	public Gender(Integer id, String gender, List<Person> persons) {
 		super();
 		this.id = id;

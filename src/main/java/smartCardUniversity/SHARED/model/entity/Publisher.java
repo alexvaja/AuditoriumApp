@@ -33,6 +33,10 @@ public class Publisher {
 		this.books = books;
 	}
 
+	public Publisher()
+	{
+		super();
+	}
 	public Integer getId() {
 		return id;
 	}

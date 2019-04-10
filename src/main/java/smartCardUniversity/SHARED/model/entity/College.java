@@ -47,6 +47,11 @@ public class College {
 	@OneToMany(mappedBy = "registerCollege"/*, fetch = FetchType.EAGER*/)
 	private List<Register> registers;
 
+	public College()
+	{
+		super();
+	}
+	
 	public College(Integer id, String name, University university, Abbreviation collegeAbbreviation, Contact contact,
 			List<Corp> corps, List<AppUser> appUsers, List<Register> registers) {
 		super();

@@ -35,6 +35,12 @@ public class Type {
 		this.description = description;
 		this.classrooms = classrooms;
 	}
+	
+	public Type()
+	{
+		super();
+	}
+	
 	public Integer getId() {
 		return id;
 	}

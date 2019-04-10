@@ -38,6 +38,10 @@ public class Food
 	@OneToMany(mappedBy = "foodd")
 	private List<OrderQuantity> foodss;
 
+	public Food()
+	{
+		super();
+	}
 	public Food(Integer id, String name, String ingredients, int weight, double price, List<Dish> dishes,
 			List<OrderQuantity> foodss) {
 		super();
