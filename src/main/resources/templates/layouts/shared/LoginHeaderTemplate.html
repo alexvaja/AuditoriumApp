@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" th:href="@{/css/cssTemplate.css}"
+	href="../../static/css/cssTemplate.css" />
+<link rel="stylesheet" th:href="@{/css/indexCSS.css}"
+	href="../../static/css/indexCSS.css" />
+</head>
+<header>
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1>
+					<a href="#">Smart Card University</a>
+				</h1>
+			</div>
+			<div class="right">
+				<a class = "button btn" href="LoginView" th:href="@{/LoginView}">Login</a>
+				<br>
+				<a class = "button btn" href="RegisterView" th:href="@{/RegisterView}">SignUp</a>
+			</div>
+			<div id="social">
+				<ul class="contact">
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
