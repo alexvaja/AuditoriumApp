@@ -2,83 +2,106 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
-    <!-- Title Page-->
-    <title>Inregistrare</title>
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Main CSS-->
-    <link rel="stylesheet" th:href="@{/css/LoginRegisterCSS.css}" href="../../static/css//LoginRegisterCSS.css" />
+<!-- Required meta tags-->
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Colorlib Templates">
+<meta name="author" content="Colorlib">
+<meta name="keywords" content="Colorlib Templates">
+<!-- Title Page-->
+<title>Inregistrare</title>
+<!-- Font special for pages-->
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<!-- Main CSS-->
+<link rel="stylesheet" th:href="@{/css/LoginRegisterCSS.css}"
+	href="../../static/css//LoginRegisterCSS.css" />
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
-                    <h2 class="title" align="center">Formular inregistrare</h2>
-                    <form method="POST">
-                        <div class="row row-space">
-                            <div class="col">
-                                <div class="input-group" align="center">
-                                    <label class="label">Email institutional:</label>
-                                    <input class="input--style-4" type="text" name="email" size="4000" style="font-size:1.5em">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Facultatea de:</label>
-                                    <select name="Facultate" id="alegere" class="input--style-4" style="max-width: 16.25rem; height:48px">
-                                        <option value="DPM" style="width:30px">Design de produs și mediu</option>
-                                        <option value="Mecanica">Inginerie mecanică</option>
-                                        <option value="SIM">Știința și ingineria materialelor</option>
-                                        <option value="Litere">Litere</option>
-                                        <option value="Muzica">Muzică</option>
-                                        <option value="Drept">Drept</option>
-                                        <option value="MateInfo">Matematică și Informatică</option>
-                                        <option value="Psiho">Psihologie și științele educației</option>
-                                        <option value="AT">Alimentație și turism</option>
-                                        <option value="Silvic">Silvicultură și exploatări forestiere</option>
-                                        <option value="Sport">Educație fizică și sporturi montane</option>
-                                        <option value="Medicina">Medicină</option>
-                                        <option value="Socio">Sociologie și comunicare</option>
-                                        <option value="Constructii">Construcții</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                <div class="row row-space">
-                    <div class="col-2">
-                        <div class="input-group">
-                            <label class="label">Parola:</label>
-                            <input class="input--style-4" type="password" name="password" style="font-size:2.5em">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="input-group">
-                            <label class="label">Repeta Parola:</label>
-                            <input class="input--style-4" type="password" name="repeatPassword" style="font-size:2.5em">
-                        </div>
-                    </div>
-                </div>
-                <div class="p-t-15">
-                    <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    </div>
+	<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+		<div class="wrapper wrapper--w680">
+			<div class="card card-4">
+				<div class="card-body">
+					<h2 class="title" align="center">Formular inregistrare</h2>
 
-    <!-- Main JS-->
-    <script src="scripts/LoginRegisterScript.js"></script>
+					<form action="/RegisterView" th:object="${newUser}" enctype="utf8" method="POST">
+						<!-- Email -->
+						<div class="row row-space">
+							<div class="col">
+								<div class="input-group" align="center">
+									<label class="label">Email institutional:</label> <input th:field="*{email}"
+										class="input--style-4" type="text" name="email" size="4000"
+										style="font-size: 1.5em">
+									<p th:each="error: ${#fields.errors('email')}"
+          							th:text="${error}">Validation error</p>
+								</div>
+							</div>
+						</div>
+						<!-- College -->
+						<div class="row row-space">
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Facultatea de:</label> 
+									<select name="college" th:field="*{college}" id="alegere" class="input--style-4"
+										style="max-width: 16.25rem; height: 48px">
+										<option value="0" style="width: 30px">Design de produs și mediu</option>
+										<option value="1">Inginerie mecanică</option>
+										<option value="2">Știința și ingineria materialelor</option>
+										<option value="3">Litere</option>
+										<option value="4">Muzică</option>
+										<option value="5">Drept</option>
+										<option value="6">Matematică și Informatică</option>
+										<option value="7">Psihologie și științele educației</option>
+										<option value="8">Alimentație și turism</option>
+										<option value="9">Silvicultură și exploatări forestiere</option>
+										<option value="10">Educație fizică și sporturi montane</option>
+										<option value="11">Medicină</option>
+										<option value="12">Sociologie și comunicare</option>
+										<option value="13">Construcții</option>
+									</select>
+									<p th:each="error : ${#fields.errors('college')}"
+          							th:text="${error}">Validation error</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="row row-space">
+							<!-- Password -->
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Parola:</label> <input th:field="*{password}"
+										class="input--style-4" type="password" name="password"
+										style="font-size: 2.5em">
+									<p th:each="error : ${#fields.errors('password')}"
+          							th:text="${error}">Validation error</p>
+								</div>
+							</div>
+							<!-- Matching Password -->
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Repeta Parola:</label> <input th:field="*{matchingPassword}"
+										class="input--style-4" type="password" name="repeatPassword"
+										style="font-size: 2.5em">
+									<p th:each="error : ${#fields.errors('matchingPassword')}"
+          							th:text="${error}">Validation error</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="p-t-15">
+							<button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main JS-->
+	<script src="scripts/LoginRegisterScript.js"></script>
 
 </body>
 
