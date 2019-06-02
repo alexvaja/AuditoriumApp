@@ -5,6 +5,3 @@ bin/
 .settings/
 *log*
 *.pdf
-
-#!src/main/resources
-#!src/main/java
