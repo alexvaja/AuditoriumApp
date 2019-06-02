@@ -35,7 +35,7 @@
 									<label class="label">Email institutional:</label> <input th:field="*{email}"
 										class="input--style-4" type="text" name="email" size="4000"
 										style="font-size: 1.5em">
-									<p th:each="error: ${#fields.errors('email')}"
+ 									<p style="color:red;" th:each="error: ${#fields.errors('email')}"
           							th:text="${error}">Validation error</p>
 								</div>
 							</div>
@@ -62,7 +62,7 @@
 										<option value="12">Sociologie și comunicare</option>
 										<option value="13">Construcții</option>
 									</select>
-									<p th:each="error : ${#fields.errors('college')}"
+									<p style="color:red;" th:each="error : ${#fields.errors('college')}"
           							th:text="${error}">Validation error</p>
 								</div>
 							</div>
@@ -75,7 +75,7 @@
 									<label class="label">Parola:</label> <input th:field="*{password}"
 										class="input--style-4" type="password" name="password"
 										style="font-size: 2.5em">
-									<p th:each="error : ${#fields.errors('password')}"
+									<p style="color:red;" th:each="error : ${#fields.errors('password')}"
           							th:text="${error}">Validation error</p>
 								</div>
 							</div>
@@ -85,7 +85,7 @@
 									<label class="label">Repeta Parola:</label> <input th:field="*{matchingPassword}"
 										class="input--style-4" type="password" name="repeatPassword"
 										style="font-size: 2.5em">
-									<p th:each="error : ${#fields.errors('matchingPassword')}"
+									<p style="color:red;" th:each="error : ${#fields.errors('matchingPassword')}"
           							th:text="${error}">Validation error</p>
 								</div>
 							</div>
