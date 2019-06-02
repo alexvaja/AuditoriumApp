@@ -25,7 +25,7 @@ public class RegisterController implements WebMvcConfigurer {
 		modelView.addObject("newUser", new RegisterDTO());
 
 		return modelView;
-	}
+	} 
 
 	@PostMapping("/RegisterView")
 	private ModelAndView postMethod(Model model, @Valid @ModelAttribute("newUser") RegisterDTO registerDTO, BindingResult result) {
