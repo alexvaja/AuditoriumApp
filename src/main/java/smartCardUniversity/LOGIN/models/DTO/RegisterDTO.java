@@ -2,13 +2,14 @@ package smartCardUniversity.LOGIN.models.DTO;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+import smartCardUniversity.LOGIN.customValidator.annotation.ValidEmail;
 
 public class RegisterDTO {
 
 	@NotNull
 	@NotEmpty
-	@Size(min=2, max=30)
+	@ValidEmail
 	private String email;
 	@NotNull
 	@NotEmpty
