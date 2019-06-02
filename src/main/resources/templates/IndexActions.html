@@ -4,7 +4,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" th:href="@{/css/shared/MainAplicationCSS.css}"
 	href="../../static/css/shared/MainAplicationCSS.css" />
-<link rel="stylesheet" th:href="@{/css/shared/MainAplicationFontsCSS.css}"
+
+<link rel="stylesheet" th:href="@{/css/auditorium/seatsCSS.css}"
+	href="../../static/css/auditorium/seatsCSS.css" />
+	
+<link rel="stylesheet"
+	th:href="@{/css/shared/MainAplicationFontsCSS.css}"
 	href="../../static/css/shared/MainAplicationFontsCSS.css" />
 <link rel="stylesheet" th:href="@{/css/shared/LoginRegisterCSS.css}"
 	href="../../static/css/shared/LoginRegisterCSS.css" />
@@ -16,7 +21,155 @@
 	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
 	rel="stylesheet" />
 <title>Home</title>
-</head>
-<body>
 
+<body>
+<div class="theatre">
+	<div class="cinema-seats left">
+		<div class="cinema-row row-1">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-2">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-3">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-4">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-5">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-6">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-7">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+	</div>
+	<div class="cinema-seats right">
+		<div class="cinema-row row-1">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-2">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-3">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-4">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-5">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-6">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+
+		<div class="cinema-row row-7">
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+			<div class="seat"></div>
+		</div>
+	</div>
+</div>
 </body>
+	<script>
+	$('.cinema-seats .seat').on('click', function() {
+		  $(this).toggleClass('active');
+		});
+	</script>

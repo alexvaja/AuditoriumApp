@@ -22,6 +22,18 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title" align="center">Formular de autentificare</h2>
+
+                    	<div th:if="${#request.getParameter('error') == true}"
+	                    	style="color: black; margin: 10px 0px;"> Autentificare esuata:<br>
+	                    	<h1>muie psd</h1>
+	                    	<span 
+	                    		th:if="${#session!= null and 
+								#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null and
+	 							#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message == 'Bad credentials'}">
+	 							Username sau utilizator gresit
+	 						</span>
+ 						</div>
+                    	
                     <form class="form-container" th:action="@{/j_spring_security_check}" method = "post">
                         <div class="row row-space">
                             <div class="col">

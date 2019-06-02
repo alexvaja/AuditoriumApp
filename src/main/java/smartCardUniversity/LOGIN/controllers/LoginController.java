@@ -1,4 +1,5 @@
 package smartCardUniversity.LOGIN.controllers;
+
 import java.security.Principal;
 
 import javax.servlet.http.HttpSession;
@@ -18,8 +19,7 @@ import smartCardUniversity.SHARED.exceptions.NewSessionException;
 import smartCardUniversity.SHARED.utils.WebUtils;
 
 @Controller
-public class LoginController 
-{
+public class LoginController {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
@@ -30,18 +30,23 @@ public class LoginController
 		model.addAttribute("userInfo", userInfo);
 		return "adminPage";
 	}
-	
+
 	@SessionScope
-	@GetMapping({"/", "/LoginView"})
-	public String openLoginPage(Model model, HttpSession session) throws NewSessionException 
-	{
+	@GetMapping({ "/", "/LoginView" })
+	public String openLoginPage(Model model, HttpSession session) throws NewSessionException {
 		LOGGER.info("Am intrat pe pagina de login prin Getmapping");
 		return "views/shared/LoginView";
 	}
-	
+
 	@RequestMapping(value = "/logoutSuccessful", method = RequestMethod.GET)
 	public String logoutSuccessfulPage(Model model) {
 		return "views/shared/loginView";
 	}
-	
+
+	@RequestMapping(value = "/login-error.html", method = RequestMethod.GET)
+	public String loginError(Model model) {
+		model.addAttribute("loginError", true);
+		return "views/shared/loginView";
+	}
+
 }
