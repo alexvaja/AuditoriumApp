@@ -31,8 +31,7 @@ public class RegisterController implements WebMvcConfigurer {
 	private ModelAndView postMethod(Model model, @Valid @ModelAttribute("newUser") RegisterDTO registerDTO, BindingResult result) {
 
 		ModelAndView modelAndView = new ModelAndView(VIEW_PATH);
-		modelAndView.addObject("newUser", registerDTO);
-		
+ 
 	    if (result.hasErrors()) {
 	    	System.out.println("-- Am intrat in if --");
 	        return modelAndView;
