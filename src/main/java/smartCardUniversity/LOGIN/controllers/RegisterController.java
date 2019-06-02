@@ -12,4 +12,8 @@ public class RegisterController
 	{
 		return "views/shared/RegisterView";
 	}
+	
+	public void x() {
+		
+	}
 }
