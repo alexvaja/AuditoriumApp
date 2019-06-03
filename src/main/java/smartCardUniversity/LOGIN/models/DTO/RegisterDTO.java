@@ -3,8 +3,10 @@ package smartCardUniversity.LOGIN.models.DTO;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import smartCardUniversity.LOGIN.customValidator.annotation.PasswordMatches;
 import smartCardUniversity.LOGIN.customValidator.annotation.ValidEmail;
 
+@PasswordMatches
 public class RegisterDTO {
 
 	@NotNull @NotEmpty @ValidEmail
