@@ -28,6 +28,11 @@
 					<h2 class="title" align="center">Formular inregistrare</h2>
 
 					<form action="/RegisterView" th:object="${newUser}" enctype="utf8" method="POST">
+						
+						<div style="color:red;" th:if="${#fields.hasErrors('*')}">
+    						<p th:each="error : ${#fields.errors('*')}" th:text="${error}"></p>    
+						</div>
+						
 						<!-- Email -->
 						<div class="row row-space">
 							<div class="col">
