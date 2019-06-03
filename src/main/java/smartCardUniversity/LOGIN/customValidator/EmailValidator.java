@@ -18,7 +18,12 @@ public class EmailValidator implements ConstraintValidator<ValidEmail, String> {
 	"[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$"; 
 	
 	@Override
+    public void initialize(ValidEmail constraintAnnotation) {       
+    }
+	
+	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
+		System.out.println("AM INTRAT IN VALIUDARE EMAIL");
 		return validateEmail(value);
 	}
 	
