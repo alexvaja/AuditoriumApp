@@ -7,18 +7,18 @@ import smartCardUniversity.LOGIN.customValidator.annotation.ValidEmail;
 
 public class RegisterDTO {
 
-	@NotNull
-	@NotEmpty
-	@ValidEmail
+	@NotNull @NotEmpty @ValidEmail
 	private String email;
-	@NotNull
-	@NotEmpty
+	
+	@NotNull @NotEmpty
 	private String password;
-	@NotNull
-	@NotEmpty
+	
+	@NotNull @NotEmpty
 	private String matchingPassword;
+	
 	@NotNull
 	private Integer college;
+	
 	@NotNull
 	private boolean checked;
 	
@@ -40,30 +40,39 @@ public class RegisterDTO {
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	public String getPassword() {
 		return password;
 	}
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	public String getMatchingPassword() {
 		return matchingPassword;
 	}
+	
 	public void setMatchingPassword(String matchingPassword) {
 		this.matchingPassword = matchingPassword;
 	}
+	
 	public Integer getCollege() {
 		return college;
 	}
+	
 	public void setCollege(Integer college) {
 		this.college = college;
 	}
+	
 	public boolean isChecked() {
 		return checked;
 	}
+	
 	public void setChecked(boolean checked) {
 		this.checked = checked;
 	}
