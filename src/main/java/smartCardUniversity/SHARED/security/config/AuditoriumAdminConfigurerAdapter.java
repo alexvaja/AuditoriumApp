@@ -10,7 +10,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationEn
 
 @Configuration
 @Order(2)
-public static class DinerAuditoriumConfigurerAdapter extends WebSecurityConfigurerAdapter
+public class AuditoriumAdminConfigurerAdapter extends WebSecurityConfigurerAdapter
 {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception
@@ -23,7 +23,7 @@ public static class DinerAuditoriumConfigurerAdapter extends WebSecurityConfigur
 	public AuthenticationEntryPoint authenticationEntryPoint()
 	{
         BasicAuthenticationEntryPoint dinerAdminEntryPoint = new BasicAuthenticationEntryPoint();
-        dinerAdminEntryPoint.setRealmName("diner auditorium realm");
+        dinerAdminEntryPoint.setRealmName("auditorium admin realm");
         return dinerAdminEntryPoint;
 	}
 }

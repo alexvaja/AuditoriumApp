@@ -11,13 +11,12 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
-public class MultipleEntryPOintsSecurityConfig 
+public class MultipleEntryPointsSecurityConfig 
 {
 	 @Bean
 	 public UserDetailsService userDetailsService() throws Exception 
 	 {
 	        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-	        
 	        manager.createUser(User.withUsername("silviu").password(encoder().encode("pass")).roles("EMPLOYEE").build());
 	        manager.createUser(User.withUsername("diana").password(encoder().encode("pass")).roles("ADMIN").build());
 	        return manager;
