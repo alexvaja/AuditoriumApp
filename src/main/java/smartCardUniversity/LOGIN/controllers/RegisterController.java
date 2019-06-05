@@ -16,7 +16,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import smartCardUniversity.LOGIN.models.DTO.RegisterDTO;
+import smartCardUniversity.LOGIN.models.RegisterViewModel;
 
 @Controller
 public class RegisterController implements WebMvcConfigurer {
@@ -27,36 +27,42 @@ public class RegisterController implements WebMvcConfigurer {
 	public ModelAndView getMapping(Model model) {
 
 		ModelAndView modelView = new ModelAndView(VIEW_PATH);
-		modelView.addObject("newUser", new RegisterDTO());
+		modelView.addObject("registerViewModel", new RegisterViewModel());
 
 		return modelView;
 	}
 
 	@PostMapping("/RegisterView")
-	private ModelAndView postMethod(Model model, @ModelAttribute("newUser") @Valid RegisterDTO registerDTO,
+	private ModelAndView postMethod(Model model, @ModelAttribute("newUser") @Valid RegisterViewModel registerViewModel,
 			BindingResult result, WebRequest request, Errors errors) {
 
 		ModelAndView modelAndView = new ModelAndView(VIEW_PATH);
-		modelAndView.addObject("newUser", registerDTO);
+		modelAndView.addObject("registerViewModel", registerViewModel);
 
 		if (result.hasErrors()) {
-			System.out.println("-- Am intrat in if --");
-			System.out.println("------------------------");
-			List<ObjectError> e = result.getAllErrors();
-			for (ObjectError ee : e) {
-				System.out.println(ee);
-			}
-			
-			List<ObjectError> eee = errors.getAllErrors();
-			for (ObjectError ee : eee) {
-				System.out.println(ee);
-			}
-			
+			System.out.println("SUNT IN VALIDARE");
+			coutErr(result, errors);
 			return modelAndView;
 		}
-
-		System.out.println("MODEL: " + registerDTO);
+		
+		System.out.println("VM: " + registerViewModel);
+		
 
 		return modelAndView;
+	}
+	
+	private void coutErr(BindingResult result, Errors errors) {
+		System.out.println("-- Am intrat in if --");
+		System.out.println("------------------------");
+		
+		List<ObjectError> e = result.getAllErrors();
+		for (ObjectError ee : e) {
+			System.out.println(ee);
+		}
+		
+		List<ObjectError> eee = errors.getAllErrors();
+		for (ObjectError ee : eee) {
+			System.out.println(ee);
+		}
 	}
 }

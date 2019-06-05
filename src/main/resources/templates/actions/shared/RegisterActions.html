@@ -27,7 +27,7 @@
 				<div class="card-body">
 					<!-- <h2 th:text="#{label.form.title}" class="title" align="center">Formular inregistrare</h2> -->
 					<h2 th:text="#{label.form.title}" class="title" align="center">Formular inregistrare</h2>
-					<form action="/RegisterView" th:object="${newUser}" enctype="utf8" method="POST">
+					<form action="/RegisterView" th:object="${registerViewModel}" enctype="utf8" method="POST">
 						
 						<div style="color:red;" th:if="${#fields.hasErrors('*')}">
     						<p th:each="error : ${#fields.errors('*')}" th:text="${error}"></p>    
@@ -41,10 +41,10 @@
 						<div class="row row-space">
 							<div class="col">
 								<div class="input-group" align="center">
-									<label class="label">Email institutional:</label> <input th:field="*{email}"
+									<label class="label">Email institutional:</label> <input th:field="*{registerDTO.email}"
 										class="input--style-4" type="text" name="email" size="4000"
 										style="font-size: 1.5em">
- 									<p style="color:red;" th:each="error: ${#fields.errors('email')}"
+ 									<p style="color:red;" th:each="error: ${#fields.errors('registerDTO.email')}"
           							th:text="${error}">Validation error</p>
 								</div>
 							</div>
@@ -54,7 +54,7 @@
 							<div class="col-2">
 								<div class="input-group">
 									<label class="label">Facultatea de:</label> 
-									<select name="college" th:field="*{college}" id="alegere" class="input--style-4"
+									<select name="college" th:field="*{registerDTO.college}" id="alegere" class="input--style-4"
 										style="max-width: 16.25rem; height: 48px">
 										<option value="0" style="width: 30px">Design de produs și mediu</option>
 										<option value="1">Inginerie mecanică</option>
@@ -71,7 +71,7 @@
 										<option value="12">Sociologie și comunicare</option>
 										<option value="13">Construcții</option>
 									</select>
-									<p style="color:red;" th:each="error : ${#fields.errors('college')}"
+									<p style="color:red;" th:each="error : ${#fields.errors('registerDTO.college')}"
           							th:text="${error}">Validation error</p>
 								</div>
 							</div>
@@ -82,20 +82,20 @@
 							<div class="col-2">
 								<div class="input-group">
 									<label class="label">Parola:</label> 
-									<input th:field="*{password}"
+									<input th:field="*{registerDTO.password}"
 										class="input--style-4" type="password" name="password"
 										style="font-size: 2.5em">
-									<p style="color:red;" th:each="error : ${#fields.errors('password')}"
+									<p style="color:red;" th:each="error : ${#fields.errors('registerDTO.password')}"
           							th:text="${error}">Validation error</p>
 								</div>
 							</div>
 							<!-- Matching Password -->
 							<div class="col-2">
 								<div class="input-group">
-									<label class="label">Repeta Parola:</label> <input th:field="*{matchingPassword}"
+									<label class="label">Repeta Parola:</label> <input th:field="*{registerDTO.matchingPassword}"
 										class="input--style-4" type="password" name="repeatPassword"
 										style="font-size: 2.5em">
-									<p style="color:red;" th:each="error : ${#fields.errors('matchingPassword')}"
+									<p style="color:red;" th:each="error : ${#fields.errors('registerDTO.matchingPassword')}"
           							th:text="${error}">Validation error</p>
 								</div>
 							</div>
