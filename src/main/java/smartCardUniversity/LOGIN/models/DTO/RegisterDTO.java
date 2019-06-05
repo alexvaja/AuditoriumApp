@@ -7,7 +7,7 @@ import smartCardUniversity.LOGIN.customValidator.annotation.PasswordMatches;
 import smartCardUniversity.LOGIN.customValidator.annotation.ValidEmail;
 
 @PasswordMatches
-public class RegisterDTO {
+public class RegisterDTO { 
 
 	@NotNull @NotEmpty @ValidEmail
 	private String email;
