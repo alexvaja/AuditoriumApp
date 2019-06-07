@@ -6,4 +6,8 @@ import smartCardUniversity.SHARED.model.entity.Role;
 
 public interface RoleRepository extends CrudRepository<Role, Integer>{
 
+	//Role findByName(String role);
+
+    @Override
+    void delete(Role role);
 }
