@@ -6,4 +6,6 @@ import smartCardUniversity.SHARED.model.entity.VerificationToken;
 
 public interface VerificationTokenRepository extends CrudRepository<VerificationToken, Integer>{
 
+	VerificationToken findByToken(String token);
+
 }
