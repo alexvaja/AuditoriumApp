@@ -2,12 +2,12 @@ package smartCardUniversity.LOGIN.service;
 
 import smartCardUniversity.LOGIN.exception.UserAlreadyExistException;
 import smartCardUniversity.LOGIN.models.DTO.RegisterDTO;
-import smartCardUniversity.SHARED.model.entity.Register;
+import smartCardUniversity.SHARED.model.entity.AppUser;
 
-public interface IUserService {
+public interface IRegisterService {
 
-	Register getUserAppFromDTO(RegisterDTO registerDTO);
+	AppUser getUserAppFromDTO(RegisterDTO registerDTO);
 	
-	Register registerNewUserAccount(RegisterDTO accountDTO)     
+	AppUser registerNewUserAccount(RegisterDTO accountDTO)     
 		      throws UserAlreadyExistException;
 }
