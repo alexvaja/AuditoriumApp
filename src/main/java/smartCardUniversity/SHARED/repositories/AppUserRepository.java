@@ -6,4 +6,8 @@ import smartCardUniversity.SHARED.model.entity.AppUser;
 
 public interface AppUserRepository extends CrudRepository<AppUser, Integer> {
 
+    AppUser findByEmail(String email);
+
+    @Override
+    void delete(AppUser user);
 }
