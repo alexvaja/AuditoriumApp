@@ -18,20 +18,21 @@ public class University {
 	@Column(name = "university_id", length = 11, nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(name = "name", length = 60, nullable = false, unique = true)
 	private String name;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id", nullable = false, unique = true)
 	private Address universityAddress;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "abbreviation_id", nullable = false, unique = true)
 	private Abbreviation universityAbbreviation;
 	//
 	@OneToOne(mappedBy = "university")
 	private College college;
+
 	public University(Integer id, String name, Address universityAddress, Abbreviation universityAbbreviation,
 			College college) {
 		super();
@@ -41,46 +42,56 @@ public class University {
 		this.universityAbbreviation = universityAbbreviation;
 		this.college = college;
 	}
-	
-	public University()
-	{
-		
+
+	public University() {
+
 	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public Address getUniversityAddress() {
 		return universityAddress;
 	}
+
 	public void setUniversityAddress(Address universityAddress) {
 		this.universityAddress = universityAddress;
 	}
+
 	public Abbreviation getUniversityAbbreviation() {
 		return universityAbbreviation;
 	}
+
 	public void setUniversityAbbreviation(Abbreviation universityAbbreviation) {
 		this.universityAbbreviation = universityAbbreviation;
 	}
+
 	public College getCollege() {
 		return college;
 	}
+
 	public void setCollege(College college) {
 		this.college = college;
 	}
+
 	@Override
 	public String toString() {
-		return "University [id=" + id + ", name=" + name + ", universityAddress=" + universityAddress
-				+ ", universityAbbreviation=" + universityAbbreviation + ", college=" + college + "]";
+		return "University [" + id + ", " + name + ", " + universityAddress + ", " + universityAbbreviation + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -88,6 +99,7 @@ public class University {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -104,7 +116,5 @@ public class University {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }

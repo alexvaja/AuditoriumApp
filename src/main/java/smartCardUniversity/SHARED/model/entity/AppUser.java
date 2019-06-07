@@ -31,7 +31,7 @@ public class AppUser {
 	private String password;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "person_id", nullable = false)
+	@JoinColumn(name = "person_id", nullable = true)
 	private Person person;
 	
 	@ManyToOne/*(cascade = CascadeType.ALL)*/

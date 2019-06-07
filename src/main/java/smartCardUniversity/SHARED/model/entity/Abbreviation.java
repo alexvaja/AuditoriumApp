@@ -77,8 +77,7 @@ public class Abbreviation {
 	
 	@Override
 	public String toString() {
-		return "Abbreviation [id=" + id + ", abbreviation=" + abbreviation + ", university=" + university + ", corp="
-				+ corp + ", college=" + college + "]";
+		return "Abbreviation [" + id + ", " + abbreviation + "]";
 	}
 
 	@Override

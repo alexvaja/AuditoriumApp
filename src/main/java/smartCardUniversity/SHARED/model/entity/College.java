@@ -131,9 +131,8 @@ public class College {
 
 	@Override
 	public String toString() {
-		return "College [id=" + id + ", name=" + name + ", university=" + university + ", collegeAbbreviation="
-				+ collegeAbbreviation + ", contact=" + contact + ", corps=" + corps + ", appUsers=" + appUsers
-				+ ", registers=" + registers + "]";
+		return "College [" + id + ", " + name + ", " + university + ", "
+				+ collegeAbbreviation + ", " + contact + "]";
 	}
 
 	@Override
