@@ -1,8 +1,5 @@
 package smartCardUniversity.LOGIN.service;
 
-import java.util.Optional;
-
-import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +10,11 @@ import smartCardUniversity.LOGIN.models.DTO.RegisterDTO;
 import smartCardUniversity.SHARED.model.entity.AppUser;
 import smartCardUniversity.SHARED.model.entity.College;
 import smartCardUniversity.SHARED.model.entity.Role;
+import smartCardUniversity.SHARED.model.entity.VerificationToken;
 import smartCardUniversity.SHARED.repositories.AppUserRepository;
 import smartCardUniversity.SHARED.repositories.CollegeRepository;
-import smartCardUniversity.SHARED.repositories.RegisterRepository;
 import smartCardUniversity.SHARED.repositories.RoleRepository;
+import smartCardUniversity.SHARED.repositories.VerificationTokenRepository;
 
 @Service
 public class RegisterService implements IRegisterService {
@@ -25,13 +23,13 @@ public class RegisterService implements IRegisterService {
 	private AppUserRepository appUserRepository;
 
 	@Autowired
-	private RegisterRepository registerRepository;
-
-	@Autowired
 	private RoleRepository roleRepository;
 	
 	@Autowired 
 	private CollegeRepository collegeRepository;
+	
+	@Autowired
+	private VerificationTokenRepository tokenRepository;
 
 	@Override
 	public AppUser getUserAppFromDTO(RegisterDTO registerDTO) {
@@ -85,4 +83,19 @@ public class RegisterService implements IRegisterService {
 		return roleRepository.findById(1).get();
 	}
 
+	@Override
+	public void createVerificationTokenForUser(AppUser user, String token) {
+		VerificationToken newToken = new VerificationToken(token, user);
+		tokenRepository.save(newToken);
+	}
+
+	@Override
+	public VerificationToken getVerificationToken(String token) {
+		// TODO Auto-generated method stub
+		return tokenRepository.findByToken(token);
+	}
+
+	public void saveRegisteredUser(AppUser user) {
+		appUserRepository.save(user);
+	}
 }
