@@ -25,17 +25,17 @@
 		<div class="wrapper wrapper--w680">
 			<div class="card card-4">
 				<div class="card-body">
-					<!-- <h2 th:text="#{label.form.title}" class="title" align="center">Formular inregistrare</h2> -->
+				<!-- 	<h2 class="title" align="center">Formular inregistrare</h2> -->
 					<h2 th:text="#{label.form.title}" class="title" align="center">Formular inregistrare</h2>
 					<form action="/RegisterView" th:object="${newUser}" enctype="utf8" method="POST">
 						
 						<div style="color:red;" th:if="${#fields.hasErrors('*')}">
     						<p th:each="error : ${#fields.errors('*')}" th:text="${error}"></p>    
 						</div>
-<!-- 						
+					
 						<a href="?lang=en" th:text="#{label.form.loginEnglish}">login</a> | <a
 							href="?lang=ro" th:text="#{label.form.loginRomanian}">login</a> <br />
-						<br /> -->
+						<br /> 
 						
 						<!-- Email -->
 						<div class="row row-space">
@@ -56,20 +56,9 @@
 									<label class="label">Facultatea de:</label> 
 									<select name="college" th:field="*{college}" id="alegere" class="input--style-4"
 										style="max-width: 16.25rem; height: 48px">
-										<option value="0" style="width: 30px">Design de produs și mediu</option>
-										<option value="1">Inginerie mecanică</option>
-										<option value="2">Știința și ingineria materialelor</option>
-										<option value="3">Litere</option>
-										<option value="4">Muzică</option>
-										<option value="5">Drept</option>
-										<option value="6">Matematică și Informatică</option>
-										<option value="7">Psihologie și științele educației</option>
-										<option value="8">Alimentație și turism</option>
-										<option value="9">Silvicultură și exploatări forestiere</option>
-										<option value="10">Educație fizică și sporturi montane</option>
-										<option value="11">Medicină</option>
-										<option value="12">Sociologie și comunicare</option>
-										<option value="13">Construcții</option>
+										<option th:each="college, collegeID : ${colleagues}"
+												th:text="${college.name}"
+												th:value="${college.id}"/>
 									</select>
 									<p style="color:red;" th:each="error : ${#fields.errors('college')}"
           							th:text="${error}">Validation error</p>
