@@ -33,10 +33,6 @@ public class Corp {
 	@OneToOne
 	@JoinColumn(name = "schedule_id", nullable = false)
 	private Schedule schedule;
-	
-	@OneToOne
-	@JoinColumn(name = "abbreviation_id", nullable = false)
-	private Abbreviation corpAbbreviation;
 	//
 	@ManyToMany
 	@JoinTable(
@@ -49,20 +45,17 @@ public class Corp {
 	@OneToMany(mappedBy = "corp")
 	private List<Classroom> classrooms;
 
-	public Corp()
-	{
+	public Corp() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	public Corp(Integer id, String name, Address corpAddress, Schedule schedule, Abbreviation corpAbbreviation,
-			List<College> colleagues, List<Classroom> classrooms) {
+
+	public Corp(Integer id, String name, Address corpAddress, Schedule schedule) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.corpAddress = corpAddress;
 		this.schedule = schedule;
-		this.corpAbbreviation = corpAbbreviation;
-		this.colleagues = colleagues;
-		this.classrooms = classrooms;
 	}
 
 	public Integer getId() {
@@ -97,14 +90,6 @@ public class Corp {
 		this.schedule = schedule;
 	}
 
-	public Abbreviation getCorpAbbreviation() {
-		return corpAbbreviation;
-	}
-
-	public void setCorpAbbreviation(Abbreviation corpAbbreviation) {
-		this.corpAbbreviation = corpAbbreviation;
-	}
-
 	public List<College> getColleagues() {
 		return colleagues;
 	}
@@ -119,13 +104,6 @@ public class Corp {
 
 	public void setClassrooms(List<Classroom> classrooms) {
 		this.classrooms = classrooms;
-	}
-
-	@Override
-	public String toString() {
-		return "Corp [id=" + id + ", name=" + name + ", corpAddress=" + corpAddress + ", schedule=" + schedule
-				+ ", corpAbbreviation=" + corpAbbreviation + ", colleagues=" + colleagues + ", classrooms=" + classrooms
-				+ "]";
 	}
 
 	@Override
@@ -152,6 +130,9 @@ public class Corp {
 			return false;
 		return true;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Corp [id=" + id + ", name=" + name + ", corpAddress=" + corpAddress + ", schedule=" + schedule + "]";
+	}
 }

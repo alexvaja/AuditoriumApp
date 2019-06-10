@@ -22,11 +22,11 @@ public class VerificationToken {
 	private static final int EXPIRATION = 60 * 24;
 
 	@Id
-	@Column(name = "id_token", length = 11, nullable = true, unique = true)
+	@Column(name = "id_token", length = 11, nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "token", length = 120, nullable = true, unique = true)
+	@Column(name = "token", length = 120, nullable = false, unique = true)
 	private String token;
 
 	@OneToOne(targetEntity = AppUser.class, fetch = FetchType.EAGER)
@@ -36,7 +36,6 @@ public class VerificationToken {
 	@Column(name = "expiry_day", nullable = false)
 	private Date expiryDate;
 	//
-
 	public VerificationToken() {
 		super();
 	}

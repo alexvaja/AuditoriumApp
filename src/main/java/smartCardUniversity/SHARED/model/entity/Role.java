@@ -20,23 +20,20 @@ public class Role {
 	@Column(name = "role", length = 60, nullable = false, unique = true)
 	private String role;
 	//
-	@OneToOne(mappedBy = "registerRole")
-	private Register register;
-	
 	@OneToOne(mappedBy = "userRole")
 	private AppUser appUser;
+	
+	public Role() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-	public Role(Integer id, String role, Register register, AppUser appUser) {
+	public Role(Integer id, String role) {
 		super();
 		this.id = id;
 		this.role = role;
-		this.register = register;
-		this.appUser = appUser;
 	}
-	public Role()
-	{
-		super();
-	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -53,25 +50,12 @@ public class Role {
 		this.role = role;
 	}
 
-	public Register getRegister() {
-		return register;
-	}
-
-	public void setRegister(Register register) {
-		this.register = register;
-	}
-
 	public AppUser getAppUser() {
 		return appUser;
 	}
 
 	public void setAppUser(AppUser appUser) {
 		this.appUser = appUser;
-	}
-
-	@Override
-	public String toString() {
-		return "Role [id=" + id + ", role=" + role + ", register=" + register + ", appUser=" + appUser + "]";
 	}
 
 	@Override
@@ -98,6 +82,9 @@ public class Role {
 			return false;
 		return true;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Role [id=" + id + ", role=" + role + "]";
+	}
 }
